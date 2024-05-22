@@ -1,57 +1,15 @@
-import math
-
-class geometricfigure:
-    def calculatearea(self ):
-        pass
-
-class Rectangle :
-    def __init__(geometricfigure):
-        self.height = height
-        self.lenght = lenght
-    def calculatearea(self):
-        return self.height * self.lenght
-
-class Triangle:
-    def __init__(geometricfigure):
-        self.height = height
-        self.baseline = lenght
-
-    def calculatearea(self):
-        return (self height * self.baseline / 2
-
-
-class Circle:
-    def __init__(geometricfigure):
-        self.radius = radius
-
-    def calculatearea(self):
-        return (self.radius * self.radius)
-
-Recta = Rectangle(5, 3)
-Trian = Triangle(2, 2)
-Circ = Circle(10)
-
-
-figure1 = Recta
-Figure2 = Trian
-figure3 = Circ
-
-
-print("area del rectangulo es",figure1.calculatearea())
-
-#------------------------------------------------------------------------
 
 class GeometricFigure1:
     def calculatearea(self):
         pass
-class Rectangle2(geometricfigure1):
+class Rectangle2(GeometricFigure1):
     def __init__(self,height,lenght):
         self.height = height
         self.lenght = lenght
         self.area = self.height * self.lenght
         print("area del rectangulo es",self.area)
 
-class Triangle3(geometricfigure):
+class Triangle3(Geometricfigure):
     def __init__(self,height,base2):
         self.height = height
         self.baseline = base2
@@ -59,7 +17,7 @@ class Triangle3(geometricfigure):
         print("area del triangle es",self.area)
 
 
-class Circle3(geometricfigure):
+class Circle3(GeometricFigure1):
     def __init__(self,radius):
         self.radius = radius
         self.area = self.radius * self.radius
