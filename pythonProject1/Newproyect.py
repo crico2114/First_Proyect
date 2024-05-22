@@ -9,7 +9,7 @@ class Rectangle2(GeometricFigure1):
         self.area = self.height * self.lenght
         print("area del rectangulo es",self.area)
 
-class Triangle3(Geometricfigure):
+class Triangle3(GeometricFigure1):
     def __init__(self,height,base2):
         self.height = height
         self.baseline = base2
