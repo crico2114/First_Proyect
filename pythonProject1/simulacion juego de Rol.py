@@ -15,54 +15,78 @@ class Character:
     def get_damage(self):
         return self.__damage
 
-    def attack(self, secondcharacter):
-        print(f"{self.__name} attacks {secondcharacter.get_name()})
 
-        # metodo de atacar un personaje
-        #recibir daño de personaje
-        # subir de nivel
 
-   # definir life
-   #definir new life
 
-   #define new level
-   # degine new health
- # define attack
- #define death
 
-def health_change(self,new_health):
-    self.__health = new_health
+    def take_damage(self,new_damage):
+        self.__health -= new_damage
+        print(f"{self.__name} takes damage {new_damage}")
 
-def take_damage(self,new_damage):
-    self.__damage = new_damage
+        if self.__health <= 0:
+            self.death ()
 
-def new_level(self, new_level)
-    self.__level += new_level
+    def new_level(self, new_level):
+         self.__level += new_level
+         print(f"{self.__name} now has reached level {new_level} ")
 
-def death(self):
-    print(f"{self.__name} has died")
+    def new_health(self, new_health):
+        self.__health = new_health
+        print(f"{self.__name} now has {new_health} Health left")
+
+    def death(self):
+        print(f"{self.__name} has died")
 
 class Warrior(Character):
-    def __init__(self, sword):
-        self.__sword = sword
-    def sword_attack(self,secondcharacter):
-    print(f" The warrior {get_name()} throws a sword attack to {secondcharacter.get_name()}.")
-    secondcharacter.take_damage(self.get_damage())
+    def __init__(self, name, level, health, damage):
+        Character.__init__(self, name, level, health, damage)
+
+
+    def sword_attack(self,second_character):
+        print(f"The warrior {self.get_name()} throws a sword attack to {second_character.get_name()}.")
+        second_character.take_damage(self.get_damage()* 2)
+
+        #lvel missing
+
+        print(f"{self.get_name()} just reached this new level {self.get_level()+1}")
+
+        #print(f"{self.get_name()} just reached this new level {self.new_level(2)}")
+
+        second_character.new_health(second_character.get_health())
+
+        #second_character.get_health(self.get_damage() *2 )  #neww
+
 
 class Mage(Character):
-    def __init__(self, cast):
-        self.__cast = cast
-    def cast_spell(self):
+    def __init__(self, name, level, health, damage):
+        Character.__init__(self, name, level, health, damage)
 
+    def cast_spell(self, second_character):
+        print(f"The mage {self.get_name()} throws a spell attack to {second_character.get_name()}.")
+        second_character.take_damage(self.get_damage())
+        second_character.new_health(second_character.get_health())
+        print(f"{self.get_name()} just reached this new level {self.get_level()+1}")
 
-class range(character):
-    def __init__(self,arrow):
-        self.__arrow = arrow
-    def attackwith_arrow(self):
+class Ranger(Character):
+    def __init__(self, name, level, health, damage):
+        Character.__init__(self, name, level, health, damage)
+
+    def attackwith_arrow(self, second_character):
+        print(f"The ranger {self.get_name()} shoots an arrow at {second_character.get_name()}.")
+        second_character.take_damage(self.get_damage())
+        second_character.new_health(second_character.get_health())
+        self.new_level(1)
+
 
 warrior1 = Warrior('Vegeta', 1, 100, 30)
-mage1 = Mage("Lord", 2, 100, 25)
-Ranger1 = range("conan", 1, 100, 20)
+mage1 = Mage("Lord", 2, 100, 100)
+ranger1 = Ranger("Conan", 1, 100, 25)
+
+
+warrior1.sword_attack(mage1)
+mage1.cast_spell(warrior1)
+ranger1.attackwith_arrow(mage1)
+
 
 
 

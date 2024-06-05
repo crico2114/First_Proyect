@@ -1,4 +1,4 @@
-
+import math
 class GeometricFigure1:
     def calculatearea(self):
         pass
@@ -20,21 +20,12 @@ class Triangle3(GeometricFigure1):
 class Circle3(GeometricFigure1):
     def __init__(self,radius):
         self.radius = radius
-        self.area = self.radius * self.radius
-        print("area del rectangulo es",self.area)
+        self.area = math.pi * self.radius ** 2
+        print("area del rectangulo es2",self.area)
+
 
 #crear instanacia
 
 rectangle = Rectangle2(5, 3)
 triangle = Triangle3(5, 2)
-circle = Circle3(10)
-print("area del rectangulo es",rectangle.calculatearea())
-print("area del triangulo es",triangle.calculatearea())
-print("area del circulo es",circle.calculatearea())
-
-
-
-
-
-
-
+circle = Circle3(2)
